@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>National Park Finder</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+	<%- include("partials/header.ejs") %>
+	<%- include("partials/nav.ejs") %>
+	<div class="card text-white bg-dark mb-3 text-center card w-50 my-auto">
+  	<div class="card-body">
+    	<h2 class="card-title">Signup</h2>
+			
+			<form method="POST" action="/signup">
+				<div class="input-group mb-3">
+				  <span class="input-group-text" id="basic-addon1">First Name</span>
+				  <input type="text" class="form-control" name="fName" aria-describedby="basic-addon1">
+				</div>
+				
+				<div class="input-group mb-3">
+				  <span class="input-group-text" id="basic-addon1">Last Name</span>
+				  <input type="text" class="form-control" name="lName" aria-describedby="basic-addon1">
+				</div>
+				
+				<div class="input-group mb-3">
+				  <label class="input-group-text" for="inputGroupSelect01">State</label>
+				  <select class="form-select" id="inputGroupSelect01" name="state">
+				    <option selected disabled>Choose...</option>
+						<option value="AL">Alabama</option>
+						<option value="AK">Alaska</option>
+						<option value="AZ">Arizona</option>
+						<option value="AR">Arkansas</option>
+						<option value="CA">California</option>
+						<option value="CO">Colorado</option>
+						<option value="CT">Connecticut</option>
+						<option value="DE">Delaware</option>
+						<option value="DC">District Of Columbia</option>
+						<option value="FL">Florida</option>
+						<option value="GA">Georgia</option>
+						<option value="HI">Hawaii</option>
+						<option value="ID">Idaho</option>
+						<option value="IL">Illinois</option>
+						<option value="IN">Indiana</option>
+						<option value="IA">Iowa</option>
+						<option value="KS">Kansas</option>
+						<option value="KY">Kentucky</option>
+						<option value="LA">Louisiana</option>
+						<option value="ME">Maine</option>
+						<option value="MD">Maryland</option>
+						<option value="MA">Massachusetts</option>
+						<option value="MI">Michigan</option>
+						<option value="MN">Minnesota</option>
+						<option value="MS">Mississippi</option>
+						<option value="MO">Missouri</option>
+						<option value="MT">Montana</option>
+						<option value="NE">Nebraska</option>
+						<option value="NV">Nevada</option>
+						<option value="NH">New Hampshire</option>
+						<option value="NJ">New Jersey</option>
+						<option value="NM">New Mexico</option>
+						<option value="NY">New York</option>
+						<option value="NC">North Carolina</option>
+						<option value="ND">North Dakota</option>
+						<option value="OH">Ohio</option>
+						<option value="OK">Oklahoma</option>
+						<option value="OR">Oregon</option>
+						<option value="PA">Pennsylvania</option>
+						<option value="RI">Rhode Island</option>
+						<option value="SC">South Carolina</option>
+						<option value="SD">South Dakota</option>
+						<option value="TN">Tennessee</option>
+						<option value="TX">Texas</option>
+						<option value="UT">Utah</option>
+						<option value="VT">Vermont</option>
+						<option value="VA">Virginia</option>
+						<option value="WA">Washington</option>
+						<option value="WV">West Virginia</option>
+						<option value="WI">Wisconsin</option>
+						<option value="WY">Wyoming</option>	
+					</select>
+				</div>
+				
+				<div class="input-group mb-3">
+				  <span class="input-group-text" id="basic-addon1">Enter Username</span>
+				  <input type="text" class="form-control" name="username" aria-describedby="basic-addon1">
+				</div>
+				
+				<div class="input-group mb-3">
+				  <span class="input-group-text" id="basic-addon1">Enter Password</span>
+				  <input type="text" class="form-control" name="password" aria-describedby="basic-addon1">
+				</div>
+
+				<input type="radio" name="sex" id="male" value="M">
+					<label for="male"> M </label>
+				<input type="radio" name="sex" id="female" value="F">
+					<label for="female"> F </label>
+				</input>
+				<br>
+				<br>
+		  	<button class="btn btn-primary">Sign Up</button>	
+			</form>
+			
+			<form action="/">
+				<br>
+				<h6>Already a member?</h6>
+				<button class="btn btn-primary">Login</button>	
+			</form>
+  	</div>
+	</div>
+
+  <% if (typeof(error) != "undefined") { %>
+    <%= error %>
+  <% } %>
+
+		
+	<%- include("partials/footer.ejs") %>
+</body>
+</html>

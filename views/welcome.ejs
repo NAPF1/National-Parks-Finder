@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Welcome</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+	<%- include("partials/header.ejs") %>
+	<%- include("partials/nav.ejs") %>
+	<legend>
+		<h1>Welcome back!</h1>
+	</legend>
+	
+	<div class="row">
+		<% let arr = [1, 460, 205, 370] %>
+		<% for (let i = 0; i < arr.length; i++) { %>
+			<div class="col-sm-3">
+				<div class="card text-white bg-dark mb-3 w-200 text-center card">
+  				<div class="card-body">
+  					<h3 class="card-title"<u><b><%= parks[arr[i]].fullName %></b></u></h3>
+  					<div class="charCard">
+  						<img src="<%= parks[arr[i]].images[0].url %>" class="card-img-top" alt="<%= parks[arr[i]].fullName %>">
+  						<div class="card-body">
+    						<ul class="list-group list-group-flush">
+	    						<li class="list-group-item text-white bg-dark"><b>Description: </b><%= parks[arr[i]].description %></li>
+	    						<li class="list-group-item text-white bg-dark"><b>State: </b><%= parks[arr[i]].states %></li>
+									
+									<li class="list-group-item text-white bg-dark">
+										<form action="/about">
+											<button name="park" class="btn btn-primary" value="<%= parks[arr[i]].parkCode %>">
+												About
+											</button>
+										</form><br>
+										<a href="<%= parks[arr[i]].url %>" name="nps" class="btn btn-primary">nps.gov</a>
+									</li>									
+	  						</ul>
+	  					</div>
+						</div>
+	  			</div>
+				</div>
+			</div>
+		<% } %>
+	</div>
+
+
+
+
+
+
+			
+		
+	<%- include("partials/footer.ejs") %>
+  <script src="/js/welcome.js"></script>
+</body>
+</html>

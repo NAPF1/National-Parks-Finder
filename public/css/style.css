@@ -1,0 +1,62 @@
+form {
+	opacity: .9;
+	bg-color: white;
+}
+
+#header {
+	background-image: url("/img/bg.jpg");
+	background-position: center;
+}
+
+body {
+	background-color: #d6d6d6;
+	align-text: center;
+	background-position: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 100px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+	display: inline;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+legend {
+	font-size: 20px;
+	text-align: center;
+}
+
+.scroll {
+	max-height: 500px;
+  overflow-y: auto;
+}

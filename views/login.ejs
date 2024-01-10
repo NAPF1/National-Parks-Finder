@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>National Park Finder</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+	<%- include("partials/header.ejs") %>
+	<%- include("partials/nav.ejs") %>
+	<legend><h1>Welcome!</h1>
+	Here, you can search for U.S. National Parks by state, activity, or...anything really!<br>Login or create an account to save parks of interest or share reviews with others!
+	</legend>
+	<div class="card text-white bg-dark mb-3 text-center card w-50 my-auto">
+  	<div class="card-body">
+    	<h2 class="card-title">Login</h2>
+			<br>
+    	<form method="POST" action="/login">
+ 				Username:
+  			<input type="text" name="username">
+  			<br><br>
+  			Password:
+  			<input type="password" name="password">
+				<br><br>
+  			<button class="btn btn-primary">Login</button>	
+  		</form>
+			<form action="/signup">
+				<br>
+				<h6>Not a member?</h6>
+				<button class="btn btn-primary">Sign Up</button>	
+			</form>
+  	</div>
+	</div>
+    
+  <div>
+    <span id="errorMsgLogin"></span>
+  </div>
+
+  <% if (typeof(error) != "undefined") { %>
+    <%= error %>
+  <% } %>
+		
+	<%- include("partials/footer.ejs") %>
+  <script src="/js/login.js"></script>
+</body>
+</html>

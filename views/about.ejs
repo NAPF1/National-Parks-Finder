@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>About</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+	<%- include("partials/header.ejs") %>
+	<%- include("partials/nav.ejs") %>
+	<br>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="card text-white bg-dark mb-3 w-200 text-center card">
+  			<div class="card-body">
+  				<h3 class="card-title"><u><b><%= park[0].fullName %></b></u></h3>
+  				<div class="charCard">
+  					<img src="<%= park[0].images[0].url %>" class="card-img-top" alt="<%= park[0].fullName %>">
+  					<div class="card-body">
+    					<ul class="list-group list-group-flush">
+								<li class="list-group-item text-white bg-dark"><b>State: <%= park[0].states %></b></li>
+	    					<li class="list-group-item text-white bg-dark"><b>Description: </b><%= park[0].description %></li>
+								<li class="list-group-item text-white bg-dark"><b>Directions: </b><%= park[0].directionsInfo %></li>
+								<li class="list-group-item text-white bg-dark"><b>Weather: </b><%= park[0].weatherInfo %></li>
+								<li class="list-group-item text-white bg-dark">
+									<a href="<%= park[0].url %>" name="nps" class="btn btn-primary">nps.gov</a>
+								</li>
+								<br>
+								<li>
+									<form method="POST" action="/wishlist">
+											<button name="parkCode" class="btn btn-primary" value="<%= park[0].parkCode %>">
+												Add to "Places to Go"!
+											</button>
+										</form>
+								</li>
+	  					</ul>
+	  				</div>
+					</div>
+	  		</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="card text-white bg-dark mb-3 w-200 text-center card">
+	  		<div class="card-body">
+	  			<h3 class="card-title"><u><b>Reviews for <%= park[0].fullName %></b></u></h3>
+	  			<div class="charCard">
+	  				<div class="card-body">
+	    				<ul class="list-group list-group-flush">
+								<% for (let i = 0; i < reviews.length; i++) { %>
+						  		<li class="list-group-item text-white bg-dark"><b>User: </b><%= reviews[i].username %></li>
+									<li class="list-group-item text-white bg-dark"><b>Rating: </b><%= reviews[i].rating %>/5</li>
+									<li class="list-group-item text-white bg-dark"><b>Review: </b><%= reviews[i].review %></li>
+									<br>
+									<br>
+								<% } %>
+								<li class="list-group-item text-white bg-dark">
+									<form action="/review">
+										<button name="parkCode" class="btn btn-primary" value="<%= park[0].parkCode %>">
+											Leave a Review
+										</button>
+									</form>
+								</li>					
+		  				</ul>
+		  			</div>
+					</div>
+		  	</div>
+			</div>
+		</div>
+	</div>
+		
+				
+
+
+
+
+
+
+			
+		
+	<%- include("partials/footer.ejs") %>
+  <script src="/js/welcome.js"></script>
+</body>
+</html>

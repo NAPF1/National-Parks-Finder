@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Quiz</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+	<%- include("partials/header.ejs") %>
+	<%- include("partials/nav.ejs") %>
+	<br>
+			<div class="card text-white bg-dark mb-3 text-center card w-50 my-auto">
+  			<div class="card-body">
+  				<h3 class="card-title"><u><b><%= park[0].fullName %></b></u></h3>
+  				<div class="charCard">
+  					<img src="<%= park[0].images[0].url %>" class="card-img-top" alt="<%= park[0].fullName %>">
+  					<div class="card-body">
+    					<ul class="list-group list-group-flush">
+								<li class="list-group-item text-white bg-dark"><b>State: <%= park[0].states %></b></li>
+								<li class="list-group-item text-white bg-dark"><b>Park Code: </b><%= park[0].parkCode %></li>
+	    					<li class="list-group-item text-white bg-dark"><b>Description: </b><%= park[0].description %></li>
+								<li class="list-group-item text-white bg-dark"><b>Directions: </b><%= park[0].directionsInfo %></li>
+								<li class="list-group-item text-white bg-dark"><b>Weather: </b><%= park[0].weatherInfo %></li>
+								
+								<br>
+								<li>
+									<form action="/quiz">
+										<button class="btn btn-primary">Quiz Me!</button>
+									</form>
+								</li>
+	  					</ul>
+	  				</div>
+					</div>
+	  		</div>
+			</div>
+		
+	<%- include("partials/footer.ejs") %>
+</body>
+</html>
